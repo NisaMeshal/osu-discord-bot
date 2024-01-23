@@ -1,0 +1,31 @@
+{
+  "name": "osu-discord-bot",
+  "version": "0.1.0",
+  "description": "A Discord bot that tracks osu games and notifies a channel when users are above or below a certain rank.",
+  "main": "dist/index.js",
+  "exports": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NisaMeshal/osu-discord-bot.git"
+  },
+  "author": "Nisa Meshal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NisaMeshal/osu-discord-bot/issues"
+  },
+  "homepage": "https://github.com/NisaMeshal/osu-discord-bot#readme",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
