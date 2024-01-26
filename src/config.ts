@@ -1,8 +1,6 @@
 // Grab token and client id from .env and export. 
 
-import dotenv from "dotenv";
-
-dotenv.config();
+import dotenv from "dotenv/config";
 
 const { DISCORD_TOKEN, DISCORD_CLIENT_ID } = process.env; 
 
