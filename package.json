@@ -4,7 +4,7 @@
   "description": "A Discord bot that tracks osu games and notifies a channel when users are above or below a certain rank.",
   "main": "dist/index.js",
   "exports": "./dist/index.js",
-  "build": "tsc",
+  "build": "tsup src/index.ts --minify",
   "start": "node dist/src/bot.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
