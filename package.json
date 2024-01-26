@@ -4,7 +4,7 @@
   "description": "A Discord bot that tracks osu games and notifies a channel when users are above or below a certain rank.",
   "main": "dist/index.js",
   "exports": "./dist/index.js",
-  "scripts" : {
+  "scripts": {
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
     "build": "tsup src/index.ts --minify"
@@ -22,11 +22,13 @@
   "dependencies": {
     "discord.js": "^14.14.1",
     "dotenv": "^16.3.2",
-    "install": "^0.13.0",
-    "typescript": "^5.3.3"
+    "install": "^0.13.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.3"
+    "nodemon": "^3.0.3",
+    "tsup": "^8.0.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
   },
   "type": "module",
   "engines": {
