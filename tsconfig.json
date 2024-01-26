@@ -1,23 +1,15 @@
 {
-    "compilerOptions": {
-      // Dependent on node version
-      "target": "ES2020",
-      "module": "commonjs",
-      "rootDir": "./src",
-      "strict": true,
-      // We must set the type
-      "noImplicitAny": true,
-      "declaration": false,
-      // Will not go through node_modules
-      "skipDefaultLibCheck": true,
-      "strictNullChecks": true,
-      // We can import json files like JavaScript
-      "resolveJsonModule": true,
-      // Decompile .ts to .js into a folder named dist
-      "outDir": "dist",
-      "esModuleInterop": true
-    },
-    // environment for env vars
-    "include": ["src/**/*"],
-    "exclude": ["node_modules"]
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true
   }
+}
