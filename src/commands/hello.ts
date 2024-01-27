@@ -1,9 +1,16 @@
-import { CommandInteraction, SlashCommandBuilder } from "discord.js";
+import { CommandInteraction, Client } from "discord.js";
+import { SlashCommand } from "src/Command";
 
-export const data = new SlashCommandBuilder()
-    .setName("hello")
-    .setDescription("Replies with degenerate salutation");
+export const hello: SlashCommand =  {
+    name: "hello",
+    description: "returns a degenerate salutation", 
 
-export async function execute(interaction: CommandInteraction) {
-    return interaction.reply("Hello senpai >_<")
-}
+    run: async (client: Client, interaction: CommandInteraction) => {
+        const content = "hello senpai :3"; 
+
+        await interaction.followUp({
+            ephemeral: true, 
+            content
+        }); 
+    }
+}; 

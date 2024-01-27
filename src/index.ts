@@ -1,35 +1,22 @@
 // initialize the bot
 
-import { Client } from "discord.js";
-import { deployCommands } from "./deploy-commands";
-import { commands } from "./commands";
-import { config } from "./config";
+import { Client, GatewayIntentBits } from "discord.js";
+import { config } from "./config.js";
+import ready from "./listeners/ready.js"; 
+import interactionCreate from "./listeners/interactionCreate.js";
 
-//create a new discord client and set intents for the bot to receive info
+console.log("osu chan is starting up..."); 
+
 const client = new Client({
-    intents: ["Guilds", "GuildMessages", "DirectMessages"]
+    intents: []
 });
 
-//log when the bot is ready
-client.once("ready", () => {
-    console.log("osu chan is ready! ❤️");
-});
+client.login(config.DISCORD_TOKEN)
+    .catch((error) => {
+        console.log('[Login Error]', error); 
+        process.exit(1); 
+    });
 
-//deploy commands when new guild created
-client.on("guildCreate", async (guild) => {
-    await deployCommands({ guildId: guild.id });
-});
-
-//run corresponding command when new user interaction occurs
-client.on("interactionCreate", async (interaction) => {
-    if(!interaction.isCommand()) {
-        return; 
-    }
-    const { commandName } = interaction; 
-    if(commands[commandName as keyof typeof commands]) {
-        commands[commandName as keyof typeof commands].execute(interaction);
-    }
-});
-
-//login to client using token
-client.login(config.DISCORD_TOKEN);
+//register ready listener with client
+ready(client); 
+interactionCreate(client); 

@@ -6,7 +6,7 @@
   "exports": "./dist/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "start": "node dist/index.js",
+    "start": "ts-node src/index.ts", 
     "build": "tsup src/index.ts --minify"
   },
   "repository": {
@@ -21,7 +21,7 @@
   "homepage": "https://github.com/NisaMeshal/osu-discord-bot#readme",
   "dependencies": {
     "discord.js": "^14.14.1",
-    "dotenv": "^16.3.2",
+    "dotenv": "^16.4.1",
     "install": "^0.13.0"
   },
   "devDependencies": {
