@@ -2,5 +2,5 @@ import { CommandInteraction, ChatInputApplicationCommandData, Client } from "dis
 
 //template for commands
 export interface SlashCommand extends ChatInputApplicationCommandData {
-    run: (client: Client, interaction: CommandInteraction) => void; 
+    run: (client: Client, interaction: CommandInteraction) => any; 
 }

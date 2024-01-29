@@ -1,4 +1,5 @@
 import { CommandInteraction, Client, Interaction } from "discord.js"; 
+import { Commands } from "../Commands"; 
 
 //listen for interaction or context menu
 export default (client: Client): void => {
@@ -10,5 +11,14 @@ export default (client: Client): void => {
 };
 
 const handleSlashCommand = async (client: Client, interaction: CommandInteraction): Promise<void> => {
+    const slashCommand = Commands.find(c => c.name === interaction.commandName); 
+    
+    if (!slashCommand) {
+        interaction.followUp({ content: "Command not found" });
+        return; 
+    }
 
+    await interaction.deferReply();
+
+    slashCommand.run(client, interaction); 
 };
